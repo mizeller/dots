@@ -6,3 +6,7 @@ TODOs
 - add screenshot(s)
 - clean out unused brew casks
 - ...
+
+
+NOTEs
+- nice, simple "Focus-Follows-Mouse" tool: https://github.com/sbmpost/AutoRaise - compatible w/ sketchybar & aerospace
