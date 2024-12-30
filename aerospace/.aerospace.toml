@@ -179,11 +179,11 @@ alt-right = ['join-with right', 'mode main']
 
 # This is the desired workspace set-up (for now):
 # {
-# - 1: { VSCode | Claude }
-# - 2: { Vivaldi }
-# - 3: { WhatsApp | Spotify }
-# - 4: { Slack | Notion }
-# - 5: { Ghostty }
+# - 1: { VSCode | Vivaldi }
+# - 2: { WhatsApp | Spotify }
+# - 3: { Slack | Notion }
+# - 4: { Ghostty }
+# - 5: { - }
 # - Finder Windows Floating by default
 # }
 
@@ -192,32 +192,32 @@ if.app-id = 'com.microsoft.VSCode'
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
-if.app-id = 'com.anthropic.claudefordesktop'
+if.app-id = 'com.vivaldi.Vivaldi'
 run = "move-node-to-workspace 1"
 
-[[on-window-detected]]
-if.app-id = 'com.vivaldi.Vivaldi'
-run = "move-node-to-workspace 2"
+# [[on-window-detected]]
+# if.app-id = 'com.vivaldi.Vivaldi'
+# run = "move-node-to-workspace 2"
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
-run = "move-node-to-workspace 3"
+run = "move-node-to-workspace 2"
 
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
-run = "move-node-to-workspace 3"
+run = "move-node-to-workspace 2"
 
 [[on-window-detected]]
 if.app-id = 'notion.id'
-run = "move-node-to-workspace 4"
+run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
-run = "move-node-to-workspace 4"
+run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = "move-node-to-workspace 5"
+run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
