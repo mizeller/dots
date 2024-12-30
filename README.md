@@ -10,3 +10,4 @@ TODOs
 
 NOTEs
 - nice, simple "Focus-Follows-Mouse" tool: https://github.com/sbmpost/AutoRaise - compatible w/ sketchybar & aerospace
+    - maybe easier to install via: https://github.com/Dimentium/homebrew-autoraise
