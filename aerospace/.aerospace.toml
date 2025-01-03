@@ -25,7 +25,7 @@ enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
 
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
-accordion-padding = 50
+accordion-padding = 30
 
 default-root-container-layout = 'tiles' # tiles|accordion
 default-root-container-orientation = 'auto' # horizontal|vertical|auto
@@ -217,8 +217,17 @@ run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = "move-node-to-workspace 4"
+run = ['layout tiling', 'move-node-to-workspace 4']
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'finder'
+run = 'layout floating'
+
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'zoom'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.window-title-regex-substring = 'gloss'
 run = 'layout floating'
