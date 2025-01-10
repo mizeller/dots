@@ -39,7 +39,7 @@ key-mapping.preset = 'qwerty' # qwerty|dvorak
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
-# on-focus-changed = ['exec-and-forget $HOME/.config/aerospace/.aero-focus.sh'] # unused
+# on-focus-changed = ['exec-and-forget $HOME/.config/aerospace/aero-focus.sh'] # unused
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -113,8 +113,8 @@ cmd-alt-h = [] # Disable "hide others"
 # alt-s = 'exec-and-forget open -a /Applications/Spotify.app' # s = sound/spotify
 
 # change between floating and tiling layout
-alt-ctrl-f = 'layout floating'
-alt-ctrl-t = 'layout tiling'
+ctrl-shift-f = 'layout floating tiling'
+# ctrl-shift-t = 'layout tiling'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 alt-slash = 'layout tiles horizontal vertical'
@@ -128,6 +128,8 @@ alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
+alt-w = 'workspace W' # main "W"orkspace
+alt-e = 'workspace E' # "F"loating workspace
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 # Move Active Window to X
@@ -138,11 +140,14 @@ alt-shift-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 # Move Active Window to Workspace X
-alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
-alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
-alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
-alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
-alt-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
+alt-shift-1 = ['move-node-to-workspace 1 --focus-follows-window', 'layout tiling']
+alt-shift-2 = ['move-node-to-workspace 2 --focus-follows-window', 'layout tiling']
+alt-shift-3 = ['move-node-to-workspace 3 --focus-follows-window', 'layout tiling']
+alt-shift-4 = ['move-node-to-workspace 4 --focus-follows-window', 'layout tiling']
+alt-shift-5 = ['move-node-to-workspace 5 --focus-follows-window', 'layout tiling']
+alt-shift-w = ['move-node-to-workspace W --focus-follows-window', 'layout tiling']
+alt-shift-e = ['move-node-to-workspace E --focus-follows-window', 'layout floating']
+# alt-shift-e = 'exec-and-forget $HOME/.config/aerospace/make_floating.sh'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
 alt-shift-minus = 'resize smart -50'
@@ -184,6 +189,8 @@ alt-right = ['join-with right', 'mode main']
 # - 3: { Slack | Notion }
 # - 4: { Ghostty }
 # - 5: { - }
+# - W: { currently active workspace } ; convenient short-cut on QUERTY keyboard
+# - E: { floating workspace; whichever windows are moved here, become floating} ; quite convenient sometime
 # - Finder Windows Floating by default
 # }
 
