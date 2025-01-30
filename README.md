@@ -11,3 +11,7 @@ TODOs
 NOTEs
 - nice, simple "Focus-Follows-Mouse" tool: https://github.com/sbmpost/AutoRaise - compatible w/ sketchybar & aerospace
     - maybe easier to install via: https://github.com/Dimentium/homebrew-autoraise
+
+- nice - define custom replacements in System Preferences > Keyboard > Text
+    - i.e. -> with →, <> with ↔, <- with ← 
+  
