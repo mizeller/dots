@@ -21,7 +21,7 @@ export DARK_WHITE=0xFF9399b2  #9399b2
 export BLACK=0xFF000000
 
 # set the first two values after 0x to OO for full transparency
-export BG_PRI_COLR=0xEE1e1e2e #1e1e2e
+export BG_PRI_COLR=0x001e1e2e #1e1e2e
 export BG_SEC_COLR=0xFF313244 #313244
 
 

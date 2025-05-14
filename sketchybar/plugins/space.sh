@@ -5,10 +5,10 @@ update() {
   if [ "$SENDER" = "space_change" ]; then
     source "$CONFIG/colors.sh"
     sketchybar --set space.$(aerospace list-workspaces --focused) \
-	              icon.highlight=true \
-                      label.highlight=true \
-		      background.color=$BG_PRI_COLR \
-		      background.border_width=1
+      icon.highlight=true \
+      label.highlight=true \
+      background.color=$BG_PRI_COLR \
+      background.border_width=1
   fi
 }
 
@@ -36,8 +36,10 @@ mouse_clicked() {
 }
 
 case "$SENDER" in
-  "mouse.clicked") mouse_clicked
+"mouse.clicked")
+  mouse_clicked
   ;;
-  *) update
+*)
+  update
   ;;
 esac
