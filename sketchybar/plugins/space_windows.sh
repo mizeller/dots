@@ -51,3 +51,13 @@ if [ "$SENDER" = "aerospace_workspace_change" ]; then
 
   sketchybar --set space.$AEROSPACE_FOCUSED_WORKSPACE display=$AEROSPACE_FOCUSED_MONITOR
 fi
+
+if [ "$SENDER" = "aerospace_focus_change" ]; then
+  # echo "$(date): aerospace_focus_change triggered" >>/tmp/sketchybar_debug.log
+  # echo "SENDER: $SENDER" >>/tmp/sketchybar_debug.log
+
+  CURRENT_WORKSPACE=$(aerospace list-workspaces --focused)
+  # echo "Current workspace: $CURRENT_WORKSPACE" >>/tmp/sketchybar_debug.log
+
+  reload_workspace_icon "$CURRENT_WORKSPACE"
+fi

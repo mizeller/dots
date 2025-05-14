@@ -1,6 +1,7 @@
 #!/bin/sh
 
 sketchybar --add event aerospace_workspace_change
+sketchybar --add event aerospace_focus_change
 
 for m in $(aerospace list-monitors | awk '{print $1}'); do
   for i in $(aerospace list-workspaces --monitor $m); do
@@ -63,4 +64,5 @@ space_creator=(
 
 sketchybar --add item space_creator left               \
            --set space_creator "${space_creator[@]}"   \
-           --subscribe space_creator aerospace_workspace_change
+           --subscribe space_creator aerospace_workspace_change \
+           --subscribe space_creator aerospace_focus_change

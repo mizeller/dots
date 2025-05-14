@@ -27,7 +27,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 accordion-padding = 30
 
-default-root-container-layout = 'tiles' # tiles|accordion
+default-root-container-layout = 'tiles'     # tiles|accordion
 default-root-container-orientation = 'auto' # horizontal|vertical|auto
 
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
@@ -40,6 +40,12 @@ key-mapping.preset = 'qwerty' # qwerty|dvorak
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # on-focus-changed = ['exec-and-forget $HOME/.config/aerospace/aero-focus.sh'] # unused
+
+on-focus-changed = [
+    'move-mouse window-lazy-center', # mouse follows focus
+    'exec-and-forget sketchybar --trigger aerospace_focus_change', # update sketchybar when focus changes, not jus when workspace changes
+]
+
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -94,8 +100,8 @@ outer.right = 10
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-alt-shift-semicolon = 'mode service' 
-alt-ctrl-shift-f = 'fullscreen'
+alt-shift-semicolon = 'mode service'
+alt-ctrl-f = 'fullscreen'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 alt-h = 'focus left'
@@ -103,14 +109,18 @@ alt-j = 'focus down'
 alt-k = 'focus up'
 alt-l = 'focus right'
 
-cmd-h = [] # Disable "hide application"
+cmd-h = []     # Disable "hide application"
 cmd-alt-h = [] # Disable "hide others"
 
 # short-cuts to open apps
-# alt-c = 'exec-and-forget open -a /Applications/Visual Studio Code.app' # c = code
-# alt-t = 'exec-and-forget open -a /Applications/Ghostty.app' # t = terminal
-# alt-b = 'exec-and-forget open -a /Applications/Vivaldi.app' # b = browser
-# alt-s = 'exec-and-forget open -a /Applications/Spotify.app' # s = sound/spotify
+# alt-c = 'exec-and-forget open -a /Applications/Visual Studio Code.app'
+alt-g = 'exec-and-forget open -a /Applications/Ghostty.app'
+alt-v = 'exec-and-forget open -a /Applications/Vivaldi.app'
+alt-c = 'exec-and-forget open -a /Applications/Visual\ Studio\ Code.app'
+# alt-s = 'exec-and-forget open -a /Applications/Slack.app'
+alt-s = 'exec-and-forget open -a /Applications/Spotify.app'
+# alt-n = 'exec-and-forget open -a /Applications/Notion.app'
+alt-w = 'exec-and-forget open -a /Applications/Whatsapp.app'
 
 # change between floating and tiling layout
 ctrl-shift-f = 'layout floating tiling'
@@ -128,7 +138,6 @@ alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
-alt-w = 'workspace W' # main "W"orkspace
 alt-e = 'workspace E' # "F"loating workspace
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
@@ -140,26 +149,42 @@ alt-shift-l = 'move right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 # Move Active Window to Workspace X
-alt-shift-1 = ['move-node-to-workspace 1 --focus-follows-window', 'layout tiling']
-alt-shift-2 = ['move-node-to-workspace 2 --focus-follows-window', 'layout tiling']
-alt-shift-3 = ['move-node-to-workspace 3 --focus-follows-window', 'layout tiling']
-alt-shift-4 = ['move-node-to-workspace 4 --focus-follows-window', 'layout tiling']
-alt-shift-5 = ['move-node-to-workspace 5 --focus-follows-window', 'layout tiling']
-alt-shift-w = ['move-node-to-workspace W --focus-follows-window', 'layout tiling']
-alt-shift-e = ['move-node-to-workspace E --focus-follows-window', 'layout floating']
+alt-shift-1 = [
+    'move-node-to-workspace 1 --focus-follows-window',
+    'layout tiling',
+]
+alt-shift-2 = [
+    'move-node-to-workspace 2 --focus-follows-window',
+    'layout tiling',
+]
+alt-shift-3 = [
+    'move-node-to-workspace 3 --focus-follows-window',
+    'layout tiling',
+]
+alt-shift-4 = [
+    'move-node-to-workspace 4 --focus-follows-window',
+    'layout tiling',
+]
+alt-shift-5 = [
+    'move-node-to-workspace 5 --focus-follows-window',
+    'layout tiling',
+]
+alt-shift-e = [
+    'move-node-to-workspace E --focus-follows-window',
+    'layout floating',
+]
 # alt-shift-e = 'exec-and-forget $HOME/.config/aerospace/make_floating.sh'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#resize
-alt-shift-minus = 'resize smart -50'
-alt-shift-equal = 'resize smart +50'
+alt-shift-minus = 'resize smart -100'
+alt-shift-equal = 'resize smart +100'
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-alt-tab = 'workspace next --wrap-around' # 'workspace-back-and-forth'
-alt-shift-tab = 'workspace prev --wrap-around' # 'move-workspace-to-monitor --wrap-around next'
+alt-tab = 'workspace-back-and-forth' # 'workspace next --wrap-around'
+# alt-shift-tab = 'workspace prev --wrap-around' # 'move-workspace-to-monitor --wrap-around next'
 cmd-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
-
 
 
 [mode.service.binding]
@@ -202,10 +227,6 @@ run = "move-node-to-workspace 1"
 if.app-id = 'com.vivaldi.Vivaldi'
 run = "move-node-to-workspace 1"
 
-# [[on-window-detected]]
-# if.app-id = 'com.vivaldi.Vivaldi'
-# run = "move-node-to-workspace 2"
-
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
 run = "move-node-to-workspace 2"
@@ -227,9 +248,20 @@ if.app-id = 'com.mitchellh.ghostty'
 run = ['layout tiling', 'move-node-to-workspace 4']
 
 [[on-window-detected]]
+if.app-id = 'com.philandro.anydesk'
+run = ['layout tiling', 'move-node-to-workspace 5']
+
+[[on-window-detected]]
 if.app-name-regex-substring = 'finder'
 run = 'layout floating'
 
+[[on-window-detected]]
+if.app-id = 'com.cisco.secureclient.gui'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'claude'
+run = 'layout floating'
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'zoom'
