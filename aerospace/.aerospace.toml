@@ -3,7 +3,7 @@
 
 
 # Start AeroSpace at login
-start-at-login = true
+start-at-login = false
 
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands
@@ -115,12 +115,14 @@ cmd-alt-h = [] # Disable "hide others"
 # short-cuts to open apps
 # alt-c = 'exec-and-forget open -a /Applications/Visual Studio Code.app'
 alt-g = 'exec-and-forget open -a /Applications/Ghostty.app'
+alt-p = 'exec-and-forget open -a /Applications/Keynote.app'
 alt-v = 'exec-and-forget open -a /Applications/Vivaldi.app'
 alt-c = 'exec-and-forget open -a /Applications/Visual\ Studio\ Code.app'
 # alt-s = 'exec-and-forget open -a /Applications/Slack.app'
 alt-s = 'exec-and-forget open -a /Applications/Spotify.app'
 # alt-n = 'exec-and-forget open -a /Applications/Notion.app'
 alt-w = 'exec-and-forget open -a /Applications/Whatsapp.app'
+alt-z = 'exec-and-forget open -a /Applications/Zed.app'
 
 # change between floating and tiling layout
 ctrl-shift-f = 'layout floating tiling'
@@ -138,7 +140,6 @@ alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
-alt-e = 'workspace E' # "F"loating workspace
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 # Move Active Window to X
@@ -146,6 +147,10 @@ alt-shift-h = 'move left'
 alt-shift-j = 'move down'
 alt-shift-k = 'move up'
 alt-shift-l = 'move right'
+
+
+# Move window to other monitor
+alt-shift-m = 'move-node-to-monitor --wrap-around next --focus-follows-window'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 # Move Active Window to Workspace X
@@ -168,10 +173,6 @@ alt-shift-4 = [
 alt-shift-5 = [
     'move-node-to-workspace 5 --focus-follows-window',
     'layout tiling',
-]
-alt-shift-e = [
-    'move-node-to-workspace E --focus-follows-window',
-    'layout floating',
 ]
 # alt-shift-e = 'exec-and-forget $HOME/.config/aerospace/make_floating.sh'
 
@@ -218,6 +219,10 @@ alt-right = ['join-with right', 'mode main']
 # - E: { floating workspace; whichever windows are moved here, become floating} ; quite convenient sometime
 # - Finder Windows Floating by default
 # }
+
+[[on-window-detected]]
+if.app-id = 'dev.zed.Zed'
+run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'

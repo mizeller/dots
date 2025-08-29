@@ -16,5 +16,3 @@ export BATTERY_75_ICON=􀺸
 export BATTERY_50_ICON=􀺶
 export BATTERY_25_ICON=􀛩
 export BATTERY_0_ICON=􀛪
-
-

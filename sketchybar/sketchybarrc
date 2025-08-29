@@ -56,6 +56,7 @@ source "$ITEM_DIR/wake.sh"
 # -- RIGHT Side Items --
 source "$ITEM_DIR/time.sh"
 source "$ITEM_DIR/battery.sh"
+# source "$ITEM_DIR/proton.sh"
 # source "$ITEM_DIR/sound.sh"
 # source "$ITEM_DIR/wifi.sh"
 # source "$ITEM_DIR/cpu.sh" # could not find CPU symbol!
