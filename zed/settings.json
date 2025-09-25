@@ -1,0 +1,116 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "disable_ai": false, // only when working on cpp bootcamp!
+  "show_edit_predictions": true,
+  "show_completions_on_input": true,
+  "icon_theme": "Catppuccin Macchiato",
+  "relative_line_numbers": true,
+  "gutter": {
+    "line_numbers": true
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "format_on_save": "on",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "title_bar": {
+    "show_branch_icon": true, // Show/hide branch icon beside branch switcher
+    "show_branch_name": true, // Show/hide branch name
+    "show_project_items": true, // Show/hide project host and name
+    "show_onboarding_banner": true, // Show/hide onboarding banners
+    "show_user_picture": true, // Show/hide user avatar
+    "show_sign_in": true, // Show/hide sign-in button
+    "show_menus": true // Show/hide menus
+  },
+  "tab_bar": {
+    "show": true
+  },
+  "soft_wrap": "editor_width",
+  "agent": {
+    "default_profile": "write",
+    "always_allow_tool_actions": true,
+    "play_sound_when_agent_done": true,
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    },
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    }
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "ssh_connections": [
+    {
+      "host": "crosspath-vm",
+      "projects": [
+        {
+          "paths": ["/home/michel/projects/eigenComputePose"]
+        }
+      ]
+    },
+    {
+      "host": "goldeneye",
+      "projects": [
+        {
+          "paths": ["/home/mizeller/projects/MissionControl"]
+        },
+        {
+          "paths": ["/home/mizeller/projects/ubvision"]
+        },
+        {
+          "paths": ["/home/mizeller/projects/whitebook.com"]
+        },
+        {
+          "paths": ["/home/mizeller/whitebook"]
+        },
+        {
+          "paths": ["/home/mizeller/whitebook/my-medusa-store"]
+        }
+      ]
+    }
+  ],
+  "languages": {
+    "Python": {
+      "language_servers": ["!pylsp", "pyright"],
+      // "language_servers": ["pyright"],
+      "formatter": {
+        "external": {
+          "command": "black",
+          "arguments": ["-"]
+        }
+      }
+    }
+  },
+  "lsp": {
+    "texlab": {
+      "settings": {
+        "texlab": {
+          "build": {
+            "onSave": false // if this is true, ZED automatically opens pdf-preview!
+          }
+        }
+      }
+    }
+  },
+  "base_keymap": "VSCode",
+  "theme": "Ayu Mirage",
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 12.0,
+  "terminal": { "font_family": "JetBrainsMono Nerd Font" },
+  "git": { "git_gutter": "tracked_files", "inline_blame": { "enabled": true } }
+}

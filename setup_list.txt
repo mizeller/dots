@@ -23,7 +23,8 @@ brew install sketchybar
 brew install borders
 
 # CLI tools
-brew install git        # self explanatory...
+brew install neovim
+brew install git
 brew install starship   # cross-shell prompt
 brew install eza        # modern alternative to ls
 brew install fzf        # fuzzy finder

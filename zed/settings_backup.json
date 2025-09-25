@@ -1,0 +1,62 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "relative_line_numbers": true,
+  "gutter": {
+    "line_numbers": true
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "format_on_save": "on",
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "tab_bar": {
+    "show": true
+  },
+  "show_edit_predictions": true,
+  "soft_wrap": "editor_width",
+  "agent": {
+    "inline_assistant_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    },
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "ssh_connections": [
+    {
+      "host": "lambda-gpu004",
+      "username": "michel",
+      "projects": [
+        {
+          "paths": [
+            "~/projects/hold-gs-data"
+          ]
+        }
+      ]
+    }
+  ],
+  "base_keymap": "VSCode",
+  "theme": "Ayu Mirage",
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 12.0,
+  "terminal": { "font_family": "UbuntuMono Nerd Font Mono" },
+  "git": {"git_gutter": "tracked_files", "inline_blame": {"enabled": true}}
+}

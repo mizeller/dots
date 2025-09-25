@@ -1,0 +1,44 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j j": "vim::SwitchToNormalMode"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+      "cmd-shift-t": "terminal_panel::ToggleFocus",
+      "cmd-shift-g": "git_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // "j k": "vim::SwitchToNormalMode"
+    }
+  },
+  {
+    "context": "Editor && !agent_diff",
+    "use_key_equivalents": true,
+    "bindings": {
+      "cmd-k cmd-s": "git::ToggleStaged"
+    }
+  },
+  {
+    "bindings": {
+      "cmd-g": [
+        "workspace::SendKeystrokes",
+        ": new center terminal enter lazygit enter"
+      ]
+    }
+  }
+]
