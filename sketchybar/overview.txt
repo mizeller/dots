@@ -1,0 +1,13 @@
+How do I want my workspace to be structured?
+
+For starters, let's use this setup (single, external monitor):
+
+{
+    1: VSCode. Current project.
+    2: Ghostty & Vivaldi (work-related, half screen)
+    3: Slack (Prob. add notion there as well)
+    4: Spotify & Whatsapp (private)
+    5: Vivaldi, full screen. research & work related
+    ...
+    ?N: Notion > to take notes & what not...
+}

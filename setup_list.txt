@@ -1,0 +1,33 @@
+
+# - [x] vivaldi
+# - [x] zed
+# - [x] (logitech software to customize mouse scrolling direction)
+# - [x] https://protonvpn.com/
+# - [x] https://proton.me/drive/download
+#   - [x] ln -s /Users/mizeller/Library/CloudStorage/ProtonDrive-mizeller@pm.me-folder ~/proton
+#   - [x] ln -s ~/proton/projects ~/projects
+
+# BREW
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+brew install --cask ghostty
+brew install font-jetbrains-mono-nerd-font
+brew install --cask nikitabobko/tap/aerospace
+# don't forget to link the config file!
+# ln -s ~/.config/aerospace/.aerospace.toml ~/.aerospace.toml
+
+brew tap FelixKratz/formulae
+brew install --cask font-sketchybar-app-font
+brew install --cask sf-symbols
+brew install sketchybar
+brew install borders
+
+# CLI tools
+brew install git        # self explanatory...
+brew install starship   # cross-shell prompt
+brew install eza        # modern alternative to ls
+brew install fzf        # fuzzy finder
+brew install ffmpeg     # video and audio processing
+
+# other tools
+brew install --cask flameshot
