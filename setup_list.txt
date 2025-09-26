@@ -29,6 +29,9 @@ brew install starship   # cross-shell prompt
 brew install eza        # modern alternative to ls
 brew install fzf        # fuzzy finder
 brew install ffmpeg     # video and audio processing
+brew install tmux
 
 # other tools
 brew install --cask flameshot
+brew install --cask mactex
+brew install --cask librewolf
