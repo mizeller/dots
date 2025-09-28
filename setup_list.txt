@@ -35,3 +35,5 @@ brew install tmux
 brew install --cask flameshot
 brew install --cask mactex
 brew install --cask librewolf
+brew install docker
+brew install docker-compose
