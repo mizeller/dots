@@ -11,7 +11,7 @@
   "show_edit_predictions": true,
   "show_completions_on_input": true,
   "icon_theme": "Catppuccin Macchiato",
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "gutter": {
     "line_numbers": true
   },
@@ -38,17 +38,12 @@
   },
   "soft_wrap": "editor_width",
   "agent": {
-    "default_profile": "write",
-    "always_allow_tool_actions": true,
-    "play_sound_when_agent_done": true,
-    "inline_assistant_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
-    },
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4"
-    }
+    },
+    "default_profile": "write",
+    "model_parameters": []
   },
   "features": {
     "edit_prediction_provider": "zed"
@@ -56,43 +51,39 @@
   "ssh_connections": [
     {
       "host": "crosspath-vm",
-      "projects": [
-        {
-          "paths": ["/home/michel/projects/eigenComputePose"]
-        }
-      ]
+      "args": [],
+      "projects": []
     },
     {
       "host": "goldeneye",
+      "args": [],
       "projects": [
         {
-          "paths": ["/home/mizeller/projects/MissionControl"]
+          "paths": [
+            "/home/mizeller/projects/whitebook/docker-db-auto-backup"
+          ]
         },
         {
-          "paths": ["/home/mizeller/projects/ubvision"]
-        },
-        {
-          "paths": ["/home/mizeller/projects/whitebook.com"]
-        },
-        {
-          "paths": ["/home/mizeller/whitebook"]
-        },
-        {
-          "paths": ["/home/mizeller/whitebook/my-medusa-store"]
+          "paths": [
+            "/home/mizeller/projects/whitebook/whitebook.com"
+          ]
         }
       ]
     }
   ],
   "languages": {
     "Python": {
-      "language_servers": ["!pylsp", "pyright"],
-      // "language_servers": ["pyright"],
+      // "language_servers": ["!pylsp", "pyright"],
+      "language_servers": ["pyright"],
       "formatter": {
         "external": {
           "command": "black",
           "arguments": ["-"]
         }
       }
+    },
+    "Markdown": {
+      "format_on_save": "off"
     }
   },
   "lsp": {
@@ -103,6 +94,15 @@
             "onSave": false // if this is true, ZED automatically opens pdf-preview!
           }
         }
+      }
+    },
+    "texpresso-lsp": {
+      "initialization_options": {
+        "texpresso_path": "/Users/mizeller/.texpresso/build/texpresso" // omissable if TeXpresso is in PATH
+        // ^ this path must be to an executable called "texpresso" which must be in the same dir as the executable "texpresso-tonic"
+      },
+      "settings": {
+        "preview_follow_cursor": false // default true, makes preview constantly follow the position of the cursor
       }
     }
   },

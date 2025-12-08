@@ -35,5 +35,36 @@ brew install tmux
 brew install --cask flameshot
 brew install --cask mactex
 brew install --cask librewolf
+brew install --cask whatsapp
+brew install --cask raycast
+
 brew install docker
 brew install docker-compose
+brew install zsh-autosuggestions
+brew install zsh-completions
+brew install httpie			# CLI for http requests
+brew install uv				# python env manager w/ RUST
+brew install imagemagick		# CLI image transforms
+brew install tree  			# list dir as tree
+brew install watch 			# watch -n 0.2 <cmd> 
+brew install black 			# python formatter
+brew install --cask vscodium
+
+
+# to support swipe gestures between aerospace workspaces
+curl -sSL https://raw.githubusercontent.com/acsandmann/aerospace-swipe/main/install.sh | bash
+
+# cpp
+brew install cmake
+
+# rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# todotree rust crate; useful cli to highlight TODO/NOTE/... in codebase
+cargo install todo-tree 
+## add to $PATH
+echo 'export PATH="$HOME/.cargo/bin:$PATH"' >> ~/.zshrc && source ~/.zshrc
+
+
+
+

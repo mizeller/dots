@@ -7,6 +7,10 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "disable_ai": false, // only when working on cpp bootcamp!
+  "show_edit_predictions": true,
+  "show_completions_on_input": true,
+  "icon_theme": "Catppuccin Macchiato",
   "relative_line_numbers": true,
   "gutter": {
     "line_numbers": true
@@ -20,43 +24,89 @@
       "milliseconds": 1000
     }
   },
+  "title_bar": {
+    "show_branch_icon": true, // Show/hide branch icon beside branch switcher
+    "show_branch_name": true, // Show/hide branch name
+    "show_project_items": true, // Show/hide project host and name
+    "show_onboarding_banner": true, // Show/hide onboarding banners
+    "show_user_picture": true, // Show/hide user avatar
+    "show_sign_in": true, // Show/hide sign-in button
+    "show_menus": true // Show/hide menus
+  },
   "tab_bar": {
     "show": true
   },
-  "show_edit_predictions": true,
   "soft_wrap": "editor_width",
   "agent": {
-    "inline_assistant_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
-    },
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
-    },
-    "version": "2"
+    "default_profile": "ask",
+    "model_parameters": []
   },
   "features": {
     "edit_prediction_provider": "zed"
   },
   "ssh_connections": [
     {
-      "host": "lambda-gpu004",
-      "username": "michel",
+      "host": "crosspath-vm",
+      "args": [],
+      "projects": []
+    },
+    {
+      "host": "goldeneye",
+      "args": [],
       "projects": [
         {
           "paths": [
-            "~/projects/hold-gs-data"
+            "/home/mizeller/projects/whitebook/docker-db-auto-backup"
+          ]
+        },
+        {
+          "paths": [
+            "/home/mizeller/projects/whitebook/whitebook.com"
           ]
         }
       ]
     }
   ],
+  "languages": {
+    "Python": {
+      // "language_servers": ["!pylsp", "pyright"],
+      "language_servers": ["pyright"],
+      "formatter": {
+        "external": {
+          "command": "black",
+          "arguments": ["-"]
+        }
+      }
+    },
+    "Markdown": {
+      "format_on_save": "off"
+    }
+  },
+  "lsp": {
+    "texlab": {
+      "settings": {
+        "texlab": {
+          "build": {
+            "onSave": false // if this is true, ZED automatically opens pdf-preview!
+          }
+        }
+      }
+    },
+    "texpresso-lsp": {
+      "initialization_options": {
+        "texpresso_path": "/Users/mizeller/.texpresso/build/texpresso" // omissable if TeXpresso is in PATH
+        // ^ this path must be to an executable called "texpresso" which must be in the same dir as the executable "texpresso-tonic"
+      },
+      "settings": {
+        "preview_follow_cursor": false // default true, makes preview constantly follow the position of the cursor
+      }
+    }
+  },
   "base_keymap": "VSCode",
   "theme": "Ayu Mirage",
   "vim_mode": true,
   "ui_font_size": 16,
   "buffer_font_size": 12.0,
-  "terminal": { "font_family": "UbuntuMono Nerd Font Mono" },
-  "git": {"git_gutter": "tracked_files", "inline_blame": {"enabled": true}}
+  "terminal": { "font_family": "JetBrainsMono Nerd Font" },
+  "git": { "git_gutter": "tracked_files", "inline_blame": { "enabled": true } }
 }
