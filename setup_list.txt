@@ -36,7 +36,12 @@ brew install --cask flameshot
 brew install --cask mactex
 brew install --cask librewolf
 brew install --cask whatsapp
-brew install --cask raycast
+brew install --cask spotify
+# brew install --cask raycast
+brew install --cask vlc
+brew install --cask kindavim
+
+
 
 brew install docker
 brew install docker-compose
@@ -49,7 +54,8 @@ brew install tree  			# list dir as tree
 brew install watch 			# watch -n 0.2 <cmd> 
 brew install black 			# python formatter
 brew install --cask vscodium
-
+brew install yazi sevenzip jq poppler fd ripgrep zoxide resvg font-symbols-only-nerd-font
+brew install gitui
 
 # to support swipe gestures between aerospace workspaces
 curl -sSL https://raw.githubusercontent.com/acsandmann/aerospace-swipe/main/install.sh | bash

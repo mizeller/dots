@@ -38,6 +38,7 @@
   },
   "soft_wrap": "editor_width",
   "agent": {
+    "always_allow_tool_actions": true,
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4"

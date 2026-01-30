@@ -400,6 +400,10 @@ cx() { cd "$@" && l; }
 # add texpresso && texpresso-tonic to PATH, s.t. it's automatically detected by ZED
 # export PATH="/Users/mizeller/texpresso/build:$PATH"
 
+
+# add cargo to path
+export PATH="$HOME/.cargo/bin:$PATH"
+
 alias goldeneye="ssh goldeneye"
 
 alias scratchpad="nvim ~/scratch/.scratch.md"
@@ -448,4 +452,16 @@ alias python-init='source ~/.python-base/bin/activate'
 # open excalidraw in a private vivaldi window and move to second monitor (ipad)
 alias sketchpad='open -na "Vivaldi" --args --incognito "https://excalidraw.com" && sleep 1 && aerospace focus --window-id $(aerospace list-windows --focused | awk "{print \$1}") && aerospace move-node-to-monitor --wrap-around next --focus-follows-window'
 alias scratchdrawing="vivaldi \"https://excalidraw.com/#json=\$(cat ~/scratch/.scratch.excalidraw | jq -sRr @uri)\""
-export PATH="$HOME/.cargo/bin:$PATH"
+alias compress_images_for_web='find . -type f -name "*.png" -o -name "*.jpg" | while read f; do dir=$(dirname "$f"); mkdir -p "$dir/optimized" "$dir/webp"; base=$(basename "$f"); ext="${base##*.}"; name="${base%.*}"; magick "$f" -strip -resize 1920x1920\> -quality 90 -colorspace sRGB "$dir/optimized/$name.jpg"; magick "$f" -strip -resize 1920x1920\> -quality 90 -colorspace sRGB -define webp:method=6 "$dir/webp/$name.webp"; done'
+
+
+
+
+# open the yazi-cwd when exiting
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
