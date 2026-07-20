@@ -1,0 +1,25 @@
+{
+  "vaults": [
+    {
+      "label": "tolaria",
+      "path": "/Users/mizeller/Library/CloudStorage/ProtonDrive-mizeller@pm.me-folder/projects/tolaria",
+      "alias": null,
+      "shortLabel": null,
+      "color": null,
+      "icon": null,
+      "mounted": true
+    },
+    {
+      "label": "brain",
+      "path": "/Users/mizeller/Library/CloudStorage/ProtonDrive-mizeller@pm.me-folder/projects/brain",
+      "alias": null,
+      "shortLabel": null,
+      "color": null,
+      "icon": null,
+      "mounted": true
+    }
+  ],
+  "active_vault": "/Users/mizeller/Library/CloudStorage/ProtonDrive-mizeller@pm.me-folder/projects/brain",
+  "default_workspace_path": "/Users/mizeller/Library/CloudStorage/ProtonDrive-mizeller@pm.me-folder/projects/tolaria",
+  "hidden_defaults": []
+}

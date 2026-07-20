@@ -7,6 +7,21 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "edit_predictions": {
+    "provider": "zed"
+  },
   "disable_ai": false, // only when working on cpp bootcamp!
   "show_edit_predictions": true,
   "show_completions_on_input": true,
@@ -38,16 +53,18 @@
   },
   "soft_wrap": "editor_width",
   "agent": {
-    "always_allow_tool_actions": true,
+    "dock": "right",
+    "tool_permissions": {
+      "default": "allow"
+    },
     "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
       "provider": "zed.dev",
-      "model": "claude-sonnet-4"
+      "model": "claude-opus-4-6-thinking"
     },
     "default_profile": "write",
     "model_parameters": []
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
   },
   "ssh_connections": [
     {

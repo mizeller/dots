@@ -11,7 +11,7 @@
   "show_edit_predictions": true,
   "show_completions_on_input": true,
   "icon_theme": "Catppuccin Macchiato",
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "gutter": {
     "line_numbers": true
   },
@@ -38,7 +38,14 @@
   },
   "soft_wrap": "editor_width",
   "agent": {
-    "default_profile": "ask",
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "effort": "high",
+      "enable_thinking": true,
+      "provider": "zed.dev",
+      "model": "claude-opus-4-6-thinking"
+    },
+    "default_profile": "write",
     "model_parameters": []
   },
   "features": {

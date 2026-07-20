@@ -16,6 +16,7 @@ after-startup-command = [
   'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
   'exec-and-forget open -a /Applications/Vivaldi.app', 'move-node-to-workspace 1',
   'exec-and-forget open -a /Applications/Ghostty.app', 'move-node-to-workspace 2',
+  'exec-and-forget open -a /Applications/ExcalidrawZ.app', 'move-node-to-workspace 5',
 ]
 exec-on-workspace-change = [
     '/bin/zsh',
@@ -126,6 +127,7 @@ alt-v = 'exec-and-forget open -a /Applications/Vivaldi.app'
 # alt-n = 'exec-and-forget open -a /Applications/Notion.app'
 # alt-w = 'exec-and-forget open -a /Applications/Whatsapp.app'
 alt-z = 'exec-and-forget open -a /Applications/Zed.app'
+alt-e = 'exec-and-forget open -a /Applications/ExcalidrawZ.app'
 
 # change between floating and tiling layout
 ctrl-shift-f = 'layout floating tiling'
@@ -242,6 +244,10 @@ run = "move-node-to-workspace 3"
 [[on-window-detected]]
 if.app-id = 'net.whatsapp.WhatsApp'
 run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
+if.app-id = 'com.chocoford.excalidraw'
+run = "move-node-to-workspace 5"
 
 # [[on-window-detected]]
 # if.app-id = 'notion.id'
